@@ -61,6 +61,8 @@ function SinglePost() {
               </span>
             </div>
             {post.username &&
+              user &&
+              user.username &&
               post.username.username.toString() ===
                 user.username.toString() && (
                 <div className="w-1/4">
