@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import { Context } from "../../Context/Context";
 import user_icon from "../../Images/user_icon.webp";
+import { mainUrl } from "../../config";
 
 function Settings() {
   const { user, token, dispatch } = useContext(Context);
@@ -15,7 +16,8 @@ function Settings() {
   // const passwordRef = useRef();
   // const { dispatch } = useContext(Context);
 
-  const PF = "http://localhost:3001/images/";
+  // const PF = "http://localhost:3001/images/";
+  const PF = `${mainUrl}images/`;
 
   const handleDelete = async () => {
     // console.log(token);

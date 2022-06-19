@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 import logo from "../../Images/about_logo.png";
 import { Context } from "../../Context/Context";
 import user_icon from "../../Images/user_icon.webp";
+import { mainUrl } from "../../config";
 
 function SideNavbar() {
   const [show, setshow] = useState(false);
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:3001/images/";
+  // const PF = "http://localhost:3001/images/";
+  const PF = `${mainUrl}images/`;
 
   const handleLogout = (e) => {
     dispatch({ type: "LOGOUT" });

@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { Context } from "../../Context/Context";
 import logo from "../../Images/navbar_logo.png";
 import user_icon from "../../Images/user-profile.jpg";
+import { mainUrl } from "../../config";
 
 function TopBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:3001/images/";
+  const PF = `${mainUrl}images/`;
+  // const PF ="http://localhost:3001/images/";
 
   const handleLogout = (e) => {
     dispatch({ type: "LOGOUT" });

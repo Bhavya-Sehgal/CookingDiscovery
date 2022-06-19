@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { FaHandPointRight } from "react-icons/fa";
 import { Context } from "../../Context/Context";
+import { mainUrl } from "../../config";
 
 function SinglePost() {
   const location = useLocation();
@@ -11,7 +12,8 @@ function SinglePost() {
   const { user, token } = useContext(Context);
   // const [updateMode, setUpdateMode] = useState("true");
 
-  const PF = "http://localhost:3001/images/";
+  // const PF = "http://localhost:3001/images/";
+  const PF = `${mainUrl}images/`;
 
   useEffect(() => {
     const getPost = async () => {

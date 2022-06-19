@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import postImg from "../../Images/post_img.jpg";
+import { mainUrl } from "../../config";
 
 function Post({ post }) {
-  const PF = "http://localhost:3001/images/";
+  // const PF = "http://localhost:3001/images/";
+  const PF = `${mainUrl}images/`;
   console.log(post.cuisine);
   return (
     <Link to={`/post/${post._id}`}>
