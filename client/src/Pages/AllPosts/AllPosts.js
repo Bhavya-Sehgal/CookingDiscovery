@@ -12,7 +12,7 @@ function AllPosts() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get("/posts/allPosts" + search);
+        const res = await axios.get("/api/posts/allPosts" + search);
         console.log(res);
         setPosts(res.data);
       } catch (error) {

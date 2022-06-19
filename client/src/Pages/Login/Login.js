@@ -16,7 +16,7 @@ function Login() {
     // console.log(userRef.current.value);
     // console.log(passwordRef.current.value);
     try {
-      const res = await axios.post("/auth/login", {
+      const res = await axios.post("/api/auth/login", {
         username: userRef.current.value,
         password: passwordRef.current.value,
       });

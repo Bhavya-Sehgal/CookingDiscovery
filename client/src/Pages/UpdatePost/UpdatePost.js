@@ -23,7 +23,7 @@ function UpdatePost() {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/posts/get/" + path);
+      const res = await axios.get("/api/posts/get/" + path);
       setPost(res.data);
       console.log(res.data);
     };
@@ -61,13 +61,13 @@ function UpdatePost() {
       data.append("file", file);
       newPost.photo = filename;
       try {
-        await axios.post("/upload", data);
+        await axios.post("/api/upload", data);
       } catch (error) {
         console.log(error);
       }
     }
     try {
-      const res = await axios.put(`/posts/${post._id}`, newPost, {
+      const res = await axios.put(`/api/posts/${post._id}`, newPost, {
         headers: {
           authorization: `Bearer ${token}`,
         },

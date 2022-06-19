@@ -17,7 +17,7 @@ function SinglePost() {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/posts/get/" + path);
+      const res = await axios.get("/api/posts/get/" + path);
       setPost(res.data);
       console.log(res.data);
     };
@@ -29,7 +29,7 @@ function SinglePost() {
     // console.log(token);
     try {
       await axios.delete(
-        `/posts/${post._id}`,
+        `/api/posts/${post._id}`,
         // {
         //   data: { username: user._id },
         // },

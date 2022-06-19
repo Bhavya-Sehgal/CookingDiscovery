@@ -23,7 +23,7 @@ function Settings() {
     // console.log(token);
     try {
       await axios.delete(
-        "/users/",
+        "/api/users/",
         // {
         //   data: { username: user._id },
         // },
@@ -59,13 +59,13 @@ function Settings() {
       data.append("file", file);
       updatedUser.profilePicture = filename;
       try {
-        await axios.post("/upload", data);
+        await axios.post("/api/upload", data);
       } catch (error) {
         console.log(error);
       }
     }
     try {
-      const res = await axios.put("/users/", updatedUser, {
+      const res = await axios.put("/api/users/", updatedUser, {
         headers: {
           authorization: `Bearer ${token}`,
         },

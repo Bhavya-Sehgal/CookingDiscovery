@@ -9,7 +9,7 @@ function Sidebar() {
   useEffect(() => {
     const getCuisine = async () => {
       try {
-        const res = await axios.get("/cuisine/");
+        const res = await axios.get("/api/cuisine/");
         console.log(res);
         setCuisine(res.data);
       } catch (error) {
