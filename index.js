@@ -11,6 +11,8 @@ const path = require("path");
 dotenv.config();
 const app = express();
 app.use(express.json());
+const cors = require("cors");
+app.use(cors());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 
 mongoose

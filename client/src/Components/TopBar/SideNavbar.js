@@ -11,7 +11,7 @@ function SideNavbar() {
   const [show, setshow] = useState(false);
   const { user, dispatch } = useContext(Context);
   // const PF = "http://localhost:3001/images/";
-  const PF = `${mainUrl}images/`;
+  const PF = `${mainUrl}/images/`;
 
   const handleLogout = (e) => {
     dispatch({ type: "LOGOUT" });

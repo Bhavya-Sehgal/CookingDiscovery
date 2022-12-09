@@ -7,7 +7,7 @@ import { mainUrl } from "../../config";
 
 function TopBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = `${mainUrl}images/`;
+  const PF = `${mainUrl}/images/`;
   // const PF ="http://localhost:3001/images/";
 
   const handleLogout = (e) => {

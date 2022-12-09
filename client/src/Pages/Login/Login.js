@@ -3,6 +3,7 @@ import React, { useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../Context/Context";
 import bg_img from "../../Images/login_bg.jpg";
+import { mainUrl } from "../../config";
 
 function Login() {
   const userRef = useRef();
@@ -16,7 +17,7 @@ function Login() {
     // console.log(userRef.current.value);
     // console.log(passwordRef.current.value);
     try {
-      const res = await axios.post("/api/auth/login", {
+      const res = await axios.post(`${mainUrl}/api/auth/login`, {
         username: userRef.current.value,
         password: passwordRef.current.value,
       });

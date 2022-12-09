@@ -3,13 +3,14 @@ import Header from "../../Components/Header/Header";
 import Posts from "../../Components/Posts/Posts";
 import Sidebar from "../../Components/Sidebar/Sidebar";
 import axios from "axios";
+import { mainUrl } from "../../config";
 
 function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get("/api/posts/");
+      const res = await axios.get(`${mainUrl}/api/posts/`);
       setPosts(res.data);
     };
     fetchPosts();

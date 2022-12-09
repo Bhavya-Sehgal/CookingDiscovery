@@ -17,13 +17,13 @@ function Settings() {
   // const { dispatch } = useContext(Context);
 
   // const PF = "http://localhost:3001/images/";
-  const PF = `${mainUrl}images/`;
+  const PF = `${mainUrl}/images/`;
 
   const handleDelete = async () => {
     // console.log(token);
     try {
       await axios.delete(
-        "/api/users/",
+        `${mainUrl}/api/users/`,
         // {
         //   data: { username: user._id },
         // },
@@ -59,13 +59,13 @@ function Settings() {
       data.append("file", file);
       updatedUser.profilePicture = filename;
       try {
-        await axios.post("/api/upload", data);
+        await axios.post(`${mainUrl}/api/upload`, data);
       } catch (error) {
         console.log(error);
       }
     }
     try {
-      const res = await axios.put("/api/users/", updatedUser, {
+      const res = await axios.put(`${mainUrl}/api/users/`, updatedUser, {
         headers: {
           authorization: `Bearer ${token}`,
         },

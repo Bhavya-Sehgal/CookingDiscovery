@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import bg_img from "../../Images/register_bg.webp";
+import { mainUrl } from "../../config";
 
 function Register() {
   const [username, setUsername] = useState("");
@@ -13,7 +14,7 @@ function Register() {
     e.preventDefault();
     setError(false);
     try {
-      const res = await axios.post("/api/auth/register", {
+      const res = await axios.post(`${mainUrl}/api/auth/register`, {
         username,
         email,
         password,

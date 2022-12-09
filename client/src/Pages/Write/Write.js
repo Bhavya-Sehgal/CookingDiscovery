@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import { Context } from "../../Context/Context";
 import { AiOutlineClose } from "react-icons/ai";
+import { mainUrl } from "../../config";
 
 function Write() {
   const [title, setTitle] = useState("");
@@ -33,13 +34,13 @@ function Write() {
       data.append("file", file);
       newPost.photo = filename;
       try {
-        await axios.post("/api/upload", data);
+        await axios.post(`${mainUrl}/api/upload`, data);
       } catch (error) {
         console.log(error);
       }
     }
     try {
-      const res = await axios.post("/api/posts", newPost, {
+      const res = await axios.post(`${mainUrl}/api/posts`, newPost, {
         headers: {
           authorization: `Bearer ${token}`,
         },

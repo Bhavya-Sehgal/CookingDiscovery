@@ -4,9 +4,9 @@ import postImg from "../../Images/post_img.jpg";
 import { mainUrl } from "../../config";
 
 function Post({ post }) {
-  // const PF = "http://localhost:3001/images/";
-  const PF = `${mainUrl}images/`;
-  console.log(post.cuisine);
+  // const PF = "http://localhost:5000/images/";
+  const PF = `${mainUrl}/images/`;
+  // console.log(post);
   return (
     <Link to={`/post/${post._id}`}>
       <div className="pt-10 md:pt-20 w-full sm:mx-[25px] mb-[40px] px-10">

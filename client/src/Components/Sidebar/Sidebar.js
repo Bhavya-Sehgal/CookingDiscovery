@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "../../Images/about_logo.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { mainUrl } from "../../config";
 
 function Sidebar() {
   const [cuisines, setCuisine] = useState([]);
@@ -9,7 +10,7 @@ function Sidebar() {
   useEffect(() => {
     const getCuisine = async () => {
       try {
-        const res = await axios.get("/api/cuisine/");
+        const res = await axios.get(`${mainUrl}/api/cuisine/`);
         console.log(res);
         setCuisine(res.data);
       } catch (error) {

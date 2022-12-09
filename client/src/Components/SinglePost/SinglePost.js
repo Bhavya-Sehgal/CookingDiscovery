@@ -12,12 +12,12 @@ function SinglePost() {
   const { user, token } = useContext(Context);
   // const [updateMode, setUpdateMode] = useState("true");
 
-  // const PF = "http://localhost:3001/images/";
-  const PF = `${mainUrl}images/`;
+  // const PF = "http://localhost:5000/images/";
+  const PF = `${mainUrl}/images/`;
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/api/posts/get/" + path);
+      const res = await axios.get(`${mainUrl}/api/posts/get/` + path);
       setPost(res.data);
       console.log(res.data);
     };
@@ -29,7 +29,7 @@ function SinglePost() {
     // console.log(token);
     try {
       await axios.delete(
-        `/api/posts/${post._id}`,
+        `${mainUrl}/api/posts/${post._id}`,
         // {
         //   data: { username: user._id },
         // },

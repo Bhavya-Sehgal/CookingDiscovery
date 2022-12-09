@@ -3,6 +3,7 @@ import axios from "axios";
 import { Context } from "../../Context/Context";
 import { AiOutlineClose } from "react-icons/ai";
 import { useLocation } from "react-router-dom";
+import { mainUrl } from "../../config";
 
 function UpdatePost() {
   const location = useLocation();
@@ -23,7 +24,7 @@ function UpdatePost() {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/api/posts/get/" + path);
+      const res = await axios.get(`${mainUrl}/api/posts/get/` + path);
       setPost(res.data);
       console.log(res.data);
     };
@@ -61,13 +62,13 @@ function UpdatePost() {
       data.append("file", file);
       newPost.photo = filename;
       try {
-        await axios.post("/api/upload", data);
+        await axios.post(`${mainUrl}/api/upload`, data);
       } catch (error) {
         console.log(error);
       }
     }
     try {
-      const res = await axios.put(`/api/posts/${post._id}`, newPost, {
+      const res = await axios.put(`${mainUrl}/api/posts/${post._id}`, newPost, {
         headers: {
           authorization: `Bearer ${token}`,
         },
