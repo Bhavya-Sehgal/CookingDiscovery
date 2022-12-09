@@ -13,17 +13,13 @@ const postSchema = new mongoose.Schema(
     },
     photo: {
       type: String,
-      // required: true,
     },
     username: {
       type: mongoose.Schema.Types.ObjectId,
-      // required: true,
       ref: "User",
     },
     cuisine: {
-      // type: String,
       type: mongoose.Schema.Types.ObjectId,
-      // required: true,
       ref: "Cuisine",
     },
     ingredients: {
@@ -34,10 +30,6 @@ const postSchema = new mongoose.Schema(
       type: Array,
       required: true,
     },
-    // categories: {
-    //   type: Array,
-    //   required: false,
-    // },
   },
   { timestamps: true }
 );
